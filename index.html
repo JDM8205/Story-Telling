@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELLA 🦁</title>
+
+<style>
+body {
+  margin: 0;
+  background: #090909;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: linear-gradient(#00000055,#000), #17120a;
+  padding: 45px 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #d4af37;
+  font-size: 55px;
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  background: #171717;
+  border: 1px solid #3b321e;
+  border-radius: 15px;
+  padding: 18px;
+  margin: 15px 0;
+}
+
+.episode {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+button {
+  background: #d4af37;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.story {
+  display: none;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.age {
+  color: #d4af37;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="age">🔞 18+ ADULT ROMANCE</div>
+  <h1>ELLA</h1>
+  <div class="subtitle">The Lioness × The Mafia Boss</div>
+  <p>A fierce heart. A dangerous love. 🦁</p>
+</header>
+
+<div class="container">
+
+<h2>🎬 Episodes</h2>
+
+<div id="episodes"></div>
+
+</div>
+
+<script>
+
+const episodes = [
+["A Lioness of Her Own",
+"Ella refuses to bow to anyone. When trouble enters her nightclub, she meets Damien Moretti—the city's feared mafia boss."],
+
+["The Kingpin",
+"Damien keeps appearing at Ella's club. Their arguments become flirting, and neither of them wants to admit the attraction."],
+
+["First Encounter",
+"Ella witnesses the aftermath of an attack connected to Damien. He takes her home, and their first almost-kiss changes everything."],
+
+["A Dangerous Attraction",
+"A private dinner reveals the softer sides of Ella and Damien. Their chemistry becomes impossible to ignore."],
+
+["Lines We Shouldn't Cross",
+"Their relationship becomes secret. Passion grows between them as they realize they're crossing a line neither can uncross."],
+
+["Enemy's Watch",
+"A rival organization begins watching Ella. Damien realizes protecting her may put a target on both of them."],
+
+["His World",
+"Ella meets the Moretti family and discovers how dangerous Damien's world really is."],
+
+["Her Rules",
+"Ella sets three rules: no control, no lies, and no using power against her. Damien agrees."],
+
+["A Deal",
+"A rival offers Damien everything he wants in exchange for Ella. He refuses—and war begins."],
+
+["Falling Anyway",
+"Ella helps Damien survive an ambush. They finally confess their love, but a mysterious message reveals the real enemy."]
+];
+
+const container = document.getElementById("episodes");
+
+episodes.forEach((episode, index) => {
+
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <div class="episode">EPISODE ${index + 1}</div>
+    <h2>${episode[0]}</h2>
+
+    <button onclick="showStory(${index})">
+      ▶ Read Episode
+    </button>
+
+    <p class="story" id="story${index}">
+      ${episode[1]}
+    </p>
+  `;
+
+  container.appendChild(card);
+});
+
+function showStory(index) {
+
+  const story = document.getElementById("story" + index);
+
+  if (story.style.display === "block") {
+    story.style.display = "none";
+  } else {
+    story.style.display = "block";
+  }
+
+}
+
+</script>
+
+</body>
+</html>
